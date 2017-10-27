@@ -54,7 +54,7 @@ public abstract class Room {
     {
     	return y;
     }
-    public abstract void print();
+    public abstract void print(); //in the Hallway class
 
 
 
