@@ -4,9 +4,8 @@ import java.util.Random;
 
 public class Utilities {
  
-	public static int getRandom()
+	public static int getRandomObstacles()
 	{
-		int x = (int) Math.random();
-		return x;
+		(int)(Math.random()*2);
 	}
 }
