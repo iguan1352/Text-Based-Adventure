@@ -2,7 +2,7 @@ package obstacles;
 
 import game.Person;
 
-public abstract class Maze {
+public abstract class Maze implements Room{
 	
 	private boolean wall;
 	private boolean sinkholes;
@@ -31,4 +31,9 @@ public abstract class Maze {
 	}*/
 	
 	public abstract void print();
+
+	public String roomId() 
+	{
+		return "m";
+	}
 }
