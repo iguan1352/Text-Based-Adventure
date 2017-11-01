@@ -1,18 +1,16 @@
 package obstacles;
 
-import game.Person;
 
 public class Wall implements Room{
 	
 	private boolean wall;
 	private boolean sinkholes;
-	private Person[] position;
+
 	
-	public Wall(boolean wall, boolean sinkholes, Person[] position)
+	public Wall(boolean wall, boolean sinkholes)
 	{
 		this.wall = wall;
 		this.sinkholes = sinkholes;
-		this.position = position;
 	}
 
 	public void print()

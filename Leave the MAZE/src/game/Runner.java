@@ -1,7 +1,6 @@
 package game;
-import obstacles.obstacle;
 
-import obstacles.Maze;
+import obstacles.obstacle;
 
 public class Runner {
 
@@ -14,7 +13,7 @@ public class Runner {
 			obstacle[] row = displayMap[i];
 			for(int j = 0; j < row.length; j++)
 			{
-				row[j] = Utilities.getRandomObstacles(null);
+				row[j] = new obstacle(3,i,j);
 			}
 		}
 		

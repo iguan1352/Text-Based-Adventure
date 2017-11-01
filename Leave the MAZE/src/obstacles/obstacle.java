@@ -1,13 +1,14 @@
 package obstacles;
 
-import game.Person;
+
 
 public class obstacle implements Room{
 	
 	private String obstacle;
-	private Person[] position;
+	private int x;
+	private int y;
 	
-	public obstacle(int obstacle, Person[] position)
+	public obstacle(int obstacle, int x, int y)
 	{
 		if(obstacle ==0)
 		{
@@ -21,7 +22,6 @@ public class obstacle implements Room{
 		{
 			this.obstacle = "empty";
 		}
-		this.position = position;
 	}
 	
 	public String returnObstacle()
@@ -29,11 +29,13 @@ public class obstacle implements Room{
 		return this.obstacle;
 	}
 	//public abstract void print();
-
+	
 	public String roomId() 
 	{
 		return "m";
 	}
+	
+
 	
 	//public abstract void print();
 }

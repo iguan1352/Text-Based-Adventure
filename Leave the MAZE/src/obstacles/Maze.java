@@ -1,18 +1,17 @@
 package obstacles;
 
-import game.Person;
-
 public abstract class Maze implements Room{
 	
 	private boolean wall;
 	private boolean sinkholes;
-	private Person[] position;
+	private int x;
+	private int y;
 	
-	public Maze(boolean wall, boolean sinkholes, Person[] position)
+	
+	public Maze(boolean wall, boolean sinkholes)
 	{
 		this.wall = wall;
 		this.sinkholes = sinkholes;
-		this.position = position;
 	}
 	
 	public boolean wall()
@@ -25,11 +24,16 @@ public abstract class Maze implements Room{
 		return sinkholes;
 	}
 	
-	/*public Person[]
-	{
-		return ;
-	}*/
-	
+	public int getX()
+    {
+    	return x;
+    }
+    
+    public int getY()
+    {
+    	return y;
+    }
+
 	public abstract void print();
 
 	public String roomId() 

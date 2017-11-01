@@ -2,6 +2,7 @@ package game;
 
 import items.Item;
 import rooms.*;
+import board.Board;
 import people.Person;
 
 import java.util.Scanner;
@@ -18,14 +19,14 @@ public class GameRunner {
             {
                 boolean[] doors = {true,true,true,true};
                 Person[] people = {};
-                Item[] items = {};
+                //Item[] items = {};
 
                 row[i] = new Hallway(doors, people, items, i, j);
             }
 
         }
 
-        School tech = new School(map);
+        Board tech = new Board(map);
 
 
         boolean gameOn = true;
