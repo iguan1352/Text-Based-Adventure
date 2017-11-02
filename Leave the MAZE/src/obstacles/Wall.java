@@ -8,6 +8,7 @@ public class Wall extends Room
 	{
 		super(x,y);
 		this.explored = false;
+		
 	}
 
 	public void print()
@@ -16,9 +17,9 @@ public class Wall extends Room
 		{
 			System.out.print("[ X ]");
 		}
-		else
+		else if(this.player)
 		{
-			System.out.print("[   ]");
+			System.out.print("[ P ]");
 		}
 	}
 	

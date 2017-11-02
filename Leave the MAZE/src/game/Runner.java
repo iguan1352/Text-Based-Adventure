@@ -19,22 +19,33 @@ public class Runner {
 			Room[] row = map[i];
 			for(int j = 0; j < row.length; j++)
 			{
-				row[j] = new Wall(i,j);
+				if(i == 0 && j ==0)
+				{
+					/* put a player*/
+				}
+				else
+					row[j] = new Wall(i,j);
 			}
 		}
 		
 		Board mazeMap = new Board(map);
 		System.out.println("Welcome to Leave the Maze." + "\nIn order to win you have to find the exit." +
-				"\nOn your way, there would be walls which you would have to walk around it.");
-		System.out.println("To start the game, please tell me your name.");
+				"\nOn your way, there would be walls which you would have to walk around.");
 		Scanner in = new Scanner(System.in);
+		
+		//pause to get name and then display the maze
 		boolean gameOn = true;
 		while(gameOn)
 		{
 			mazeMap.printMaze();
-			
-			in.close();
+			System.out.println("Which direction do you want to move.");
+			in.next();
+			//gameOn = false;
+			/* if playerinput == "north" && ! j - 1 < 0  
+			 * 	then system.out.println(array[i][ - 1].descritption;
+			 */
 		}
+		in.close();
 		
 	}
 	
