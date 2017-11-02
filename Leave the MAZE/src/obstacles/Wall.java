@@ -1,33 +1,25 @@
 package obstacles;
 
 
-public class Wall implements Room{
-	
-	private boolean wall;
-	private boolean sinkholes;
+public class Wall extends Room
+{
 
-	
-	public Wall(boolean wall, boolean sinkholes)
+	public Wall(int x, int y)
 	{
-		this.wall = wall;
-		this.sinkholes = sinkholes;
+		super(x,y);
+		this.explored = false;
 	}
 
 	public void print()
 	{
-		if(this.wall)
+		if(this.explored)
 		{
 			System.out.print("[ X ]");
 		}
-		else if(this.sinkholes) 
+		else
 		{
-			System.out.print("[ 0 ]");
+			System.out.print("[   ]");
 		}
 	}
 	
-	@Override
-	public String roomId() 
-	{
-		return "w";
-	}
 }

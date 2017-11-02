@@ -1,31 +1,40 @@
 package game;
 
-import obstacles.obstacle;
+import java.util.Scanner;
+
+import gameboard.Board;
+import obstacles.Room;
+import obstacles.Wall;
+
+
 
 public class Runner {
 
 	public static void main(String[] args)
 	{
-		obstacle[][] displayMap = new obstacle[3][3];
+		Room[][] map = new Room[3][3]; //change obstacle class to Room class
 		
-		for(int i = 0; i < displayMap.length;i++)
+		for(int i = 0; i < map.length; i++)
 		{
-			obstacle[] row = displayMap[i];
+			Room[] row = map[i];
 			for(int j = 0; j < row.length; j++)
 			{
-				row[j] = new obstacle(3,i,j);
+				row[j] = new Wall(i,j);
 			}
 		}
 		
-		/*public String getGreetings() 
+		Board mazeMap = new Board(map);
+		System.out.println("Welcome to Leave the Maze." + "\nIn order to win you have to find the exit." +
+				"\nOn your way, there would be walls which you would have to walk around it.");
+		System.out.println("To start the game, please tell me your name.");
+		Scanner in = new Scanner(System.in);
+		boolean gameOn = true;
+		while(gameOn)
 		{
-			return "What is your name?";
+			mazeMap.printMaze();
+			
+			in.close();
 		}
-		
-		public String getResponse(String statement)
-		{
-			String response = "";
-		}*/
 		
 	}
 	

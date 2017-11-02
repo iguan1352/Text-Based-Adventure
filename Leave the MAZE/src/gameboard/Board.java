@@ -1,21 +1,23 @@
 package gameboard;
 
-import obstacles.Maze;
+import obstacles.Room;
 
-public class Board {
+public class Board 
+{
 
-	private Maze[][] mazeMap;
+	private Room[][] mazeMap;
 	
-	public Board(Maze[][] mazeMap)
+	public Board(Room[][] mazeMap)
 	{
 		this.mazeMap = mazeMap;
 	}
 	
 	public void printMaze()
 	{
-		for(Maze[] row : mazeMap)
+		//for each row in room there are x amount of rooms under each row
+		for(Room[] row : mazeMap)
         {
-            for (Maze room : row)
+            for (Room room : row)
             {
                 room.print(); //the print method is in the Wall class
             }
@@ -23,11 +25,15 @@ public class Board {
         }
 	}
 	
-	public Maze[][] getMazeMap() 
+	public Room[][] getMazeMap() 
 	{
         return mazeMap;
 	}
 	
+	public void setMaze(Room[][] mazeMap)
+	{
+		this.mazeMap = mazeMap;
+	}
 }
 	
 
