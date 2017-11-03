@@ -1,6 +1,7 @@
 package gameboard;
 
 import obstacles.Room;
+import people.Player;
 
 public class Board 
 {
@@ -15,11 +16,33 @@ public class Board
 	public void printMaze()
 	{
 		//for each row in room there are x amount of rooms under each row
-		for(Room[] row : mazeMap)
+		/*for(Room[] row : mazeMap)
         {
             for (Room room : row)
             {
-                room.print(); //the print method is in the Wall class
+            	if(player.getX()==i&&player.getY()==j)
+            	{
+            		System.out.print("[ i ]");
+            	}
+            	else
+            	{
+            		room.print(); //the print method is in the Wall class
+            	}
+            }
+            System.out.println();
+        }*/
+		for(int i = 0; i < mazeMap.length; i++)
+        {
+            for (int j = 0; j < mazeMap[i].length; j++)
+            {
+            	if(Player.getX()==i&&Player.getY()==j)
+            	{
+            		System.out.print("[ i ]");
+            	}
+            	else
+            	{
+            		mazeMap[i][j].print(); //the print method is in the Wall class
+            	}
             }
             System.out.println();
         }
