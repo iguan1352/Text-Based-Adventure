@@ -13,7 +13,7 @@ public class Board
 		this.mazeMap = mazeMap;
 	}
 	
-	public void printMaze()
+	public void printMaze(Player player)
 	{
 		//for each row in room there are x amount of rooms under each row
 		/*for(Room[] row : mazeMap)
@@ -35,7 +35,7 @@ public class Board
         {
             for (int j = 0; j < mazeMap[i].length; j++)
             {
-            	if(Player.getX()==i&&Player.getY()==j)
+            	if(player.getX() == i && player.getY() == j)
             	{
             		System.out.print("[ i ]");
             	}

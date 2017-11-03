@@ -2,8 +2,8 @@ package people;
 
 public class Player implements Person
 {	
-	private static int positionX;
-	private static int positionY;
+	private  int positionX;
+	private  int positionY;
 	
 	public Player(int positionX, int positionY)
 	{
@@ -23,12 +23,13 @@ public class Player implements Person
 		
 	}
 	
-	public static int getX()
+	
+	public int getX()
 	{
 		return positionX;
 	}
 	
-	public static int getY()
+	public int getY()
 	{
 		return positionY;
 	}
