@@ -1,13 +1,16 @@
 package game;
-import obstacles.obstacle;
+
 import java.util.Random;
 
 public class Utilities {
- 
-	public static obstacle getRandomObstacles(Person[] position)
+	public int x;
+	public int y;
+	
+	public static int getRandomObstacles(int x, int y)
 	{
+		int wallCount = 4;
 		int temp =  (int)(Math.floor(Math.random()*3));
-		return new obstacle(temp, position);
+		return temp;
 	}
 	/*if(wall)
 		if x + 1 > ARRAY.LENGTH || 

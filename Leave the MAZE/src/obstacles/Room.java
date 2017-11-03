@@ -4,7 +4,7 @@ public abstract class Room
 {
 	//public abstract String roomId();
 	public boolean explored;
-	public boolean player;
+	//public String[] player;
 	private int x;
 	private int y;
 	
@@ -13,7 +13,6 @@ public abstract class Room
 		this.x = x;
 		this.y = y;
 		this.explored = false;
-		this.player = true;
 	}
 
 	public int getX()

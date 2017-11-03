@@ -11,9 +11,31 @@ public class Player implements Person
 		this.positionY = positionY;
 	}
 
-	@Override
-	public int playerLocation() 
+	public void setX(int x)
 	{
+		this.positionX = x;
+		
+	}
+	
+	public void setY(int y)
+	{
+		this.positionY = y;
+		
+	}
+	
+	public int getX()
+	{
+		return this.positionX;
+	}
+	
+	public int getY()
+	{
+		return this.positionY;
+	}
+
+	@Override
+	public int movePlayer() {
+		// TODO Auto-generated method stub
 		return 0;
 	}
 
