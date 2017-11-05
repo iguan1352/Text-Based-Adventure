@@ -4,7 +4,7 @@ package obstacles;
 public class Wall extends Room
 {
 
-	public Wall(int x, int y)
+	public Wall(int x, int y,boolean wall)
 	{
 		super(x,y);
 		//this.explored = false;

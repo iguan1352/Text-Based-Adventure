@@ -20,7 +20,14 @@ public class Runner {
 			Room[] row = map[i];
 			for(int j = 0; j < row.length; j++)
 			{
-				row[j] = new Wall(i,j);
+				if(i == 2 && j == 1)
+				{
+					row[j] = new Wall(i,j,true);
+				}
+				else
+				{
+					row[j] = new Wall(i,j,false);
+				}
 			}
 		}
 		
@@ -53,7 +60,16 @@ public class Runner {
 			{
 				player1.setX(player1.getX() + 1);
 			}
-			System.out.println(player1.getY());
+			//System.out.println(player1.getY());
+			
+			if(map[player1.getX()][player1.getY()].wall)
+			{
+				System.out.println("That is a wall. You need to go around it!");
+			}
+			else
+			{
+				
+			}
 		}
 		in.close(); 
 		
