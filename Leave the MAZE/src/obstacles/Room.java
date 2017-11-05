@@ -2,9 +2,7 @@ package obstacles;
 
 public abstract class Room 
 {
-	//public abstract String roomId();
 	public boolean explored;
-	//public String[] player;
 	private int x;
 	private int y;
 	

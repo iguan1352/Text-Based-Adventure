@@ -15,29 +15,13 @@ public class Board
 	
 	public void printMaze(Player player)
 	{
-		//for each row in room there are x amount of rooms under each row
-		/*for(Room[] row : mazeMap)
-        {
-            for (Room room : row)
-            {
-            	if(player.getX()==i&&player.getY()==j)
-            	{
-            		System.out.print("[ i ]");
-            	}
-            	else
-            	{
-            		room.print(); //the print method is in the Wall class
-            	}
-            }
-            System.out.println();
-        }*/
-		for(int i = 0; i < mazeMap.length; i++)
+		for(int i = 0; i < mazeMap.length; i++) 
         {
             for (int j = 0; j < mazeMap[i].length; j++)
             {
             	if(player.getX() == i && player.getY() == j)
             	{
-            		System.out.print("[ i ]");
+            		System.out.print("[ U ]");
             	}
             	else
             	{

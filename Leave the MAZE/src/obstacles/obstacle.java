@@ -28,14 +28,6 @@ public class obstacle implements Room{
 	{
 		return this.obstacle;
 	}
-	//public abstract void print();
-	
-	public String roomId() 
-	{
-		return "m";
-	}
-	
-
 	
 	//public abstract void print();
 }

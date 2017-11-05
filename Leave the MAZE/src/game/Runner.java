@@ -12,7 +12,7 @@ public class Runner {
 
 	public static void main(String[] args)
 	{
-		Room[][] map = new Room[5][5]; //change obstacle class to Room class
+		Room[][] map = new Room[6][5]; //change obstacle class to Room class
 		Player player1 = new Player(0,0);
 		
 		for(int i = 0; i < map.length; i++)
@@ -20,11 +20,6 @@ public class Runner {
 			Room[] row = map[i];
 			for(int j = 0; j < row.length; j++)
 			{
-				/*if(i == 0 && j ==0)
-				{
-					/* put a player
-				}*/
-
 				row[j] = new Wall(i,j);
 			}
 		}
@@ -35,21 +30,32 @@ public class Runner {
 		Scanner in = new Scanner(System.in);
 		//pause to get name and then display the maze
 		boolean gameOn = true;
-		//map[0][0].addPlayer(Player1);
-		int posx = 0;
+		//int posx = 0;
 		while(gameOn)
 		{
-			mazeMap.printMaze(player1);
+			mazeMap.printMaze(player1); //prints player in starting position 
 			System.out.println("You can move up, down, left, and right. Which direction do you want to move in. ");
-			String direct =in.next();
-			// when a player moves north for example you want to call palyer1.setX(player1.getX + 1);
-			/*if(direct.toLowerCase().equals("left"))
+			String direct = in.next(); //takes player's response
+			
+			//moves the player from place to place depending on the direction he/she wants to move in
+			if(direct.toLowerCase().equals("left") && player1.getY() > 0)
 			{
-				mazeMap.getMazeMap()[player1.getX()-1][player1.getY()].explored = true;
-				Player player1 = new Player(player1.getX()-1,player1.getY());?
-			} add specific boundary so that the player would not be able to move out of the map*/
+				player1.setY(player1.getY() - 1);
+			}
+			if(direct.toLowerCase().equals("right") && player1.getY() <= 5)
+			{
+				player1.setY(player1.getY() + 1);
+			}
+			if(direct.toLowerCase().equals("up") && player1.getX() > 0)
+			{
+				player1.setX(player1.getX() - 1);
+			}
+			if(direct.toLowerCase().equals("down") && player1.getX() <= 6)
+			{
+				player1.setX(player1.getX() + 1);
+			}
 		}
-		in.close();
+		in.close(); 
 		
 	}
 	//gameOn = false;
