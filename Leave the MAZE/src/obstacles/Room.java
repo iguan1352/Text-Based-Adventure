@@ -2,7 +2,7 @@ package obstacles;
 
 public abstract class Room 
 {
-	public boolean explored;
+	public boolean wall;
 	private int x;
 	private int y;
 	
@@ -10,7 +10,7 @@ public abstract class Room
 	{
 		this.x = x;
 		this.y = y;
-		this.explored = false;
+		this.wall = false;
 	}
 
 	public int getX()

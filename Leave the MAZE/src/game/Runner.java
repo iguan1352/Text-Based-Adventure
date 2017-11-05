@@ -30,7 +30,6 @@ public class Runner {
 		Scanner in = new Scanner(System.in);
 		//pause to get name and then display the maze
 		boolean gameOn = true;
-		//int posx = 0;
 		while(gameOn)
 		{
 			mazeMap.printMaze(player1); //prints player in starting position 
@@ -42,7 +41,7 @@ public class Runner {
 			{
 				player1.setY(player1.getY() - 1);
 			}
-			if(direct.toLowerCase().equals("right") && player1.getY() <= 5)
+			if(direct.toLowerCase().equals("right") && player1.getY()+1 < 5)
 			{
 				player1.setY(player1.getY() + 1);
 			}
@@ -50,10 +49,11 @@ public class Runner {
 			{
 				player1.setX(player1.getX() - 1);
 			}
-			if(direct.toLowerCase().equals("down") && player1.getX() <= 6)
+			if(direct.toLowerCase().equals("down") && player1.getX()+1 < 6)
 			{
 				player1.setX(player1.getX() + 1);
 			}
+			System.out.println(player1.getY());
 		}
 		in.close(); 
 		

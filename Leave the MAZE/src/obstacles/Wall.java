@@ -13,7 +13,7 @@ public class Wall extends Room
 
 	public void print()
 	{
-		if(this.explored)
+		if(this.wall)
 		{
 			System.out.print("[ W ]");
 		}
