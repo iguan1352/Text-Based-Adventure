@@ -20,14 +20,7 @@ public class Runner {
 			Room[] row = map[i];
 			for(int j = 0; j < row.length; j++)
 			{
-				if(i == 2 && j == 1)
-				{
-					row[j] = new Wall(i,j,true);
-				}
-				else
-				{
 					row[j] = new Wall(i,j,false);
-				}
 			}
 		}
 		
@@ -37,6 +30,7 @@ public class Runner {
 		Scanner in = new Scanner(System.in);
 		//pause to get name and then display the maze
 		boolean gameOn = true;
+		//int[] wallLocations = {0,3,1,1,3,0,3,2,4,4,5,2};
 		while(gameOn)
 		{
 			mazeMap.printMaze(player1); //prints player in starting position 
@@ -46,10 +40,30 @@ public class Runner {
 			//moves the player from place to place depending on the direction he/she wants to move in
 			if(direct.toLowerCase().equals("left") && player1.getY() > 0)
 			{
+				/*System.out.print("debug2");
+
+				for(int a = 0; a < wallLocations.length; a+=2)
+				{
+					if(player1.getX() == wallLocations[a] && player1.getY()-1 == wallLocations[a+1])
+						System.out.println("That is a wall. You need to go around it!");
+					else
+						player1.setY(player1.getY() - 1);
+				}
+				System.out.print("debug3");*/
 				player1.setY(player1.getY() - 1);
+
 			}
 			if(direct.toLowerCase().equals("right") && player1.getY()+1 < 5)
 			{
+				/*System.out.print("debug2");
+				for(int a = 0; a < wallLocations.length; a+=2)
+				{
+					if(player1.getX() == wallLocations[a] && player1.getY()+1 == wallLocations[a+1])
+						System.out.println("That is a wall. You need to go around it!");
+					else
+						player1.setY(player1.getY() + 1);
+				}
+				System.out.print("debug2");*/
 				player1.setY(player1.getY() + 1);
 			}
 			if(direct.toLowerCase().equals("up") && player1.getX() > 0)
@@ -62,20 +76,19 @@ public class Runner {
 			}
 			//System.out.println(player1.getY());
 			
-			if(map[player1.getX()][player1.getY()].wall)
+			//if(map[player1.getX()][player1.getY()].wall)
+			//{
+				//System.out.println("That is a wall. You need to go around it!");
+			//}
+			if(player1.getX() == 6 && player1.getY() == 5)
 			{
-				System.out.println("That is a wall. You need to go around it!");
+				System.out.println("You have reached the exit! CONGRATULATIONS!!!");
+				gameOn = false;
 			}
-			else
-			{
-				
-			}
+			
 		}
 		in.close(); 
 		
 	}
-	//gameOn = false;
-	/* if playerinput == "north" && ! j - 1 < 0  
-	 * 	then system.out.println(array[i][ - 1].descritption;
-	 */
+
 }
